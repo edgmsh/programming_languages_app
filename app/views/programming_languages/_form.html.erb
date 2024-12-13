@@ -1,0 +1,31 @@
+<%= form_with(model: programming_language, local: true) do |form| %>
+  <% if programming_language.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(programming_language.errors.count, "error") %> prohibited this programming language from being saved:</h2>
+      <ul>
+        <% programming_language.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

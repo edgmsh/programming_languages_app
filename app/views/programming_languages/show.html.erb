@@ -1,0 +1,8 @@
+<h1><%= @programming_language.title %></h1>
+
+<p><strong>Description:</strong> <%= @programming_language.description %></p>
+<p><strong>Link:</strong> <%= link_to @programming_language.link, @programming_language.link, target: "_blank" %></p>
+
+<%= link_to "Back to All Programming Languages", programming_languages_path, class: "button" %>
+<%= link_to "Edit", edit_programming_language_path(@programming_language), class: "button" %>
+<%= link_to "Delete", programming_language_path(@programming_language), method: :delete, data: { confirm: "Are you sure?" }, class: "button danger" %>
